@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.4
-// source: resources/proto/category.proto
+// source: category.proto
 
 package pb
 
@@ -137,5 +137,5 @@ var CategoryService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "resources/proto/category.proto",
+	Metadata: "category.proto",
 }
