@@ -1,0 +1,39 @@
+syntax = "proto3";
+package pb;
+option go_package = "src/pb";
+
+import "common.proto";
+
+message Product {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string category_id = 4;
+}
+
+message ProductResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string category_id = 4;
+}
+
+message CreateProductRequest {
+  string name = 1;
+  string description = 2;
+  string category_id = 3;
+}
+
+message CategoryProductRequest {
+  string category_id = 1;
+}
+
+message ProductList {
+  repeated ProductResponse products = 1;
+}
+
+service ProductService {
+  rpc CreateProduct(CreateProductRequest) returns (ProductResponse) {}
+  rpc ListProducts(Blank) returns (ProductList) {}
+  rpc findAllProductsByCategoryId(CategoryProductRequest) returns (ProductList) {}
+}
