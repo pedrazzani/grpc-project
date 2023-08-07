@@ -1,8 +1,23 @@
 # grpc-project
 Projeto para estudos de RPC
 
+# RPC / gRPC
 
-## Gerar codigos a partir do protoc
+Remote Procedure Call (RPC), Chamada de Procedimento Remoto, é um protocolo de alto nível que utiliza uma camada mais baixo nível de transporte, como o TCP/IP ou UDP.
+ Diferente do REST, que utiliza o protocolo HTTP e transferência de dados em texto, o RPC trafega dados em formato binário, 
+fazendo com que a transmissão seja bem mais rápida e eficiente.
+
+O gRPC é um framework RPC, open source, que permite o desenvolimento de aplicações em diversas linguagens, utilizando do Protocol Buffer para serialização das estruturas de dados.
+
+Os principais casos de uso são:
+
+- Uma conexão eficiente e poliglota em uma arquitetura de microserviços
+- Conectando clientes mobile e browsers com os serviços backend
+- Streaming bi-direcional usando http/2
+
+## Gerar codigos apartir do .proto
+
+Para gerar o código de um arquivo ```.proto``` é utilizado o Protocol Buffer Compiler ```protoc```. 
 
 Navegue até a pastas *resources/proto* e execute os comandos abaixo.
 Os arquivos gerados estarão na pasta *src/pb* dos respectivos modulos.
@@ -44,3 +59,8 @@ Executando o comando abaixo o **client** se conectará aos servidores trazendo o
 ```
  go run main.go
 ```
+
+### Fontes
+
+- Protocol Buffer: https://protobuf.dev/
+- gRPC: https://grpc.io/
