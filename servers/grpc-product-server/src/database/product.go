@@ -59,13 +59,3 @@ func (p *Product) FindByCategoryId(categoryId string) ([]Product, error) {
 	}
 	return products, nil
 }
-
-func (p *Product) Find(id string) (Product, error) {
-	var name, description string
-	err := p.db.QueryRow("SELECT name, description FROM products WHERE id = $1", id).
-		Scan(&name, &description)
-	if err != nil {
-		return Product{}, err
-	}
-	return Product{ID: id, Name: name, Description: description}, nil
-}
